@@ -1,0 +1,105 @@
+//A follow up to the last game but this one is more trivia based
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string a, a1, a2, a3, a4, q;
+
+	cout << "Unlike the first quest this time you have to answer accual questions and if you get them all right you win, if not you loose.\n";
+	cout << " Do you accept this challenge that has been wierdly named a quest? ";
+	getline(cin, a);
+
+
+	while (a == "y" || a == "Y")
+	{
+		cout << "\nFor glory, bragging rights and what ever this mystery prize is. But I'm the one asking questions so we doing this or not? ";
+		getline(cin, a);
+	}
+
+	while (a == "No" || a == "no")
+	{
+		cout << "I understand it can be scary knowing you've got something to loose, tell you what if you don't want to play just type 'I am a masive chicken' and I'll close ok.\n";
+		cout << "However if you don't want to adimt to being a chicken type 'I am brave' or 'yes' and we'll begin. ";
+		getline(cin, a);
+	}
+
+	if (a == "I am a masive chicken" || a == "i am a masive chicken")
+	{
+		cout << "Fair enough, bye you coward.";
+	}
+
+	if (a == "yes" || a == "Yes" || a == "I am brave" || a == "i am brave")
+	{
+		cout << "\nGreat we'll start with an easy one.\n";
+		cout << "What is the nickname given to the villin in the Scream series? ";
+		getline(cin, a1);
+
+		if (a1 == "Ghostface" || a1 == "ghostface" || a1 == "Ghost face" || a1 == "ghost face")
+		{
+			cout << "\nSee I told you it was easy now on to question 2.\n";
+			cout << "In the movie Heathers how many Heathers survive? ";
+			getline(cin, a2);
+
+			if (a2 == "2" || a2 == "two" || a2 == "Two")
+			{
+				cout << "Correct. onward to question 3.";
+				cout << "\nWell I hope you're as nerdy as I am cause What is the name of the alien creature in the Alien franchise? ";
+				getline(cin, a3);
+
+				if (a3 == "xenomorph" || a3 == "Xenomorph")
+				{
+					cout << "\nCorrect, you may shoot Kaelan with a nerf gun since he didn't think you'd get this one right\n";
+					cout << "Now for the hardest question of all question 4...Dun Dun DUUUUUUUUUUUUN.\n";
+					cout << "Are you a nerd?????? ";
+					getline(cin, a4);
+
+					while (a4 == "No" || a4 == "no")
+					{
+						cout << "you little lier, but I'm a forgiving god and give you another chance\n";
+						cout << "Are you a nerd? ";
+						getline(cin, a4);
+					}
+
+					if (a4 == "yes" || a4 == "Yes")
+					{
+						cout << "You win now close me down just hit enter and claim your reward what ever it is.";
+						getline(cin, q);
+					}
+				}
+
+				else if (a3 == "I don't know" || a3 == "i don't know" || a3 == "idk")
+				{
+					cout << "You know what I respect that admiting you don't know something takes courage.\n";
+					cout << "Good job you may shoot Kaelan with a nerf gun since he didn't belive you'd admit it.\n";
+					cout << "The quest is over you have WON, hit 'enter' to close.";
+					getline(cin, q);
+				}
+
+				else
+				{
+					cout << "oof to get this far and fail, well that sucks but you still loose. you may want to grab that second nerf gun.";
+					cout << "Please hit 'enter' to close me.";
+					getline(cin, q);
+				}
+
+			}
+
+			else
+			{
+				cout << "Sorry that is incorret, now um well nothing happens you just loose your pride.\n";
+				cout << "Please hit 'enter' to quit.";
+				getline(cin, q);
+			}
+		}
+
+		else
+		{
+			cout << "You say this is one of your favorite movies and yet you think " << a1 << " is the nickname for the villian?";
+			cout << "Be gone I'm done with your nonsense. Please hit 'enter' to close me down.";
+			getline(cin, q);
+		}
+	}
+}
