@@ -1,0 +1,64 @@
+//Just a random guessing game based off of Monty Python and the Holy Grail.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string a, i, n, c;
+
+	cout << "Your quest is to ANSWER THREE QUESTIONS. Do you accept?\n";
+	getline(cin, a);
+
+	while (a == "Y" || a == "y")
+	{
+		cout << "Cause it'll be fun. So do you accept this quest?\n";
+		getline(cin, a);
+	}
+
+	if (a == "yes" || a == "Yes")
+	{
+		cout << "\nGreat let us begin.\n\n";
+		cout << "What is your name? ";
+		getline(cin, n);
+		cout << "\nWhat is your favorite color? ";
+		getline(cin, c);
+		cout << "\nWhat is your quest ";
+		getline(cin, i);
+
+		if (i == "to answer three questions" || i == "answer three questions" || i == "to answer 3 questions" || i == "answer 3 questions" || i == "to answer questions" || i == "answer questions")
+		{
+			cout << "\nYou probably think you're so smart rereading the first thing I said well I can read shit too.\n";
+			cout << "You're name is " << n << " and your faviorte color is " << c << ". Hahaha well that was fun anywas I gotta go so hit the ENTER key and I'll leave.\n";
+			getline(cin, i);
+
+		}
+
+		else
+		{
+			cout << "\nI knew humanity was dumb but wow. Your quest is to answer three questions IT WAS THE FIRST THING I SAID\n";
+			cout << "Bye " << n << " whose faviorte color is " << c << " see I remember things people tell me. Bye you forgetfull meatbag.\n\n";
+			cout << "This is akward but I kinda need to you hit the ENTER key so I can leave. Thanks.\n";
+			getline(cin, i);
+
+		}
+	}
+
+	else if (a == "no" || a == "No")
+	{
+		cout << "\naww you're no fun.\n";
+	}
+
+	else if (a == "n")
+	{
+		cout << "\nnot only are you no fun but you're too lazy to spell the word 'no' it's like two letters come on.\n";
+	}
+
+	else
+	{
+		cout << "what does that even mean I can't this just doesn't make sense.\n";
+	}
+
+	return 0;
+}
