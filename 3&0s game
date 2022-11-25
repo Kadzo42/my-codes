@@ -1,0 +1,92 @@
+//Game the user has to enter a number ending in a 3 or 0 three consecutive times to win 
+program threeZeros;
+#include ("stdlib.hhf");
+
+
+static 
+x: int8;
+score: int8:= 0;
+
+begin threeZeros;
+
+stdout.put("Enter a number ");
+stdin.get(x);
+
+mov(x,AH);
+mov(x, AL);
+
+jmp TWhileLp;
+
+AWhileLp:
+AWhileLpTermination:
+cmp(score, 2);
+je AWhileLpDone;
+AWhileLpBody:
+
+inc(score);
+
+stdout.put("Keep going", nl, "Enter a number ");
+stdin.get(x);
+
+mov(x,AH);
+mov(x, AL);
+
+TWhileLp:
+TWhileLpTermination:
+cmp(AH, 0); 
+jl TWhileLpDone;
+TWhileLpBody:
+
+sub(3, AH);
+
+BWhileLp:
+BWhileLpTermination:
+cmp(AH, 0); 
+jle BWhileLpDone;
+BWhileLpBody:
+sub(10, AH);
+jmp BWhileLp;
+BWhileLpDone:
+
+cmp(AH, 0);
+jl ZWhileLp;
+je endthree;
+
+AWhileLpDone:
+stdout.put("YOU WIN", nl);
+jmp endgame;
+
+ZWhileLp:
+ZWhileLpTermination:
+cmp(AL, 0); 
+jl ZWhileLpDone;
+ZWhileLpBody:
+
+OWhileLp:
+OWhileLpTermination:
+cmp(AL, 0); 
+jle OWhileLpDone;
+OWhileLpBody:
+sub(10, AL);
+jmp OWhileLp;
+OWhileLpDone:
+
+cmp(AL, 0);
+jl TWhileLpDone;
+je ZWhileLpDone;
+
+ZWhileLpDone:
+stdout.put("it ends in a 0", nl);
+jmp AWhileLp;
+
+endthree:
+stdout.put("it ends in a three", nl);
+jmp AWhileLp;
+
+TWhileLpDone:
+stdout.put("YOU LOSE", nl);
+jmp endgame;
+
+endgame:
+
+end threeZeros;
