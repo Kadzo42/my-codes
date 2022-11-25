@@ -1,0 +1,27 @@
+//find area of a circle
+
+program areaCircle;
+#include("stdlib.hhf");
+
+static
+pi: real32:= 3.141592;
+r: real32;
+a: real32;
+
+begin areaCircle;
+
+stdout.put("Enter radius: ");
+stdin.get(r);
+
+finit();
+fld(r);
+fld(st0);
+fmul();
+fld(pi);
+fmul();
+fstp(a);
+
+stdout.put("The area of the circle is ");
+stdout.putr32(a, 8, 4);
+
+end areaCircle;
