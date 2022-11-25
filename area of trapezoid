@@ -1,0 +1,35 @@
+//Find area of trapezoid
+
+program areaTrapezoid;
+#include("stdlib.hhf");
+
+static
+c: real32:= 0.5;
+b: real32;
+a: real32;
+h: real32;
+area: real32;
+
+begin areaTrapezoid;
+
+stdout.put("Enter a: ");
+stdin.get(a);
+stdout.put("Enter b: ");
+stdin.get(b);
+stdout.put("Enter h: ");
+stdin.get(h);
+
+finit();
+fld(b);
+fld(a);
+fadd();
+fld(c);
+fmul();
+fld(h);
+fmul();
+fstp(area);
+
+stdout.put("The area of the trapezoid is ");
+stdout.putr32(area, 8, 4);
+
+end areaTrapezoid;
