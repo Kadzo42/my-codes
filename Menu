@@ -1,0 +1,101 @@
+//outputs the values of EFLAGS based on what hex number was entered
+
+program DVM;
+#include("stdlib.hhf");
+
+static
+a: int8;
+b: int8;
+c: int8;
+d: int8;
+e: int8; 
+aa: int8;
+bb: int8;
+cc: int8;
+dd: int8;
+ee: int8;
+
+x: int16;
+
+begin DVM;
+
+stdout.put("Give me your order as 4 Hex digits: ");
+stdin.get(BX);
+
+mov(BX, x);
+
+and(%0000_0111, BL);
+mov(BL, a);
+stdout.puti8(a);
+stdout.put(" $1 item");
+
+stdout.put(nl);
+
+mov(x, BX);
+shr(3, BX);
+and(%0000_0111, BL);
+mov(BL, b);
+stdout.puti8(b);
+stdout.put(" $2 item");
+
+stdout.put(nl);
+
+mov(x, BX);
+shr(6, BX);
+and(%0000_0111, BL);
+mov(BL, c);
+stdout.puti8(c);
+stdout.put(" $3 item");
+
+stdout.put(nl);
+
+mov(x, BX);
+shr(9, BX);
+and(%0000_0111, BL);
+mov(BL, d);
+stdout.puti8(d);
+stdout.put(" $4 items");
+
+stdout.put(nl);
+
+mov(x, BX);
+shr(12, BX);
+and(%0000_0111, BL);
+mov(BL, e);
+stdout.puti8(e);
+stdout.put(" $5 item");
+
+stdout.put(nl);
+
+mov(a, AL);
+
+mov(b, AH);
+add(b, AH);
+add(AH, bb);
+add(bb, AL);
+
+mov(c, AH);
+add(c, AH);
+add(c, AH);
+mov(AH, cc);
+add(cc, AL);
+
+mov(d, AH);
+add(d, AH);
+add(d, AH);
+add(d, AH);
+mov(AH, dd);
+add(dd, AL);
+
+mov(e, AH);
+add(e, AH);
+add(e, AH);
+add(e, AH);
+add(e, AH);
+mov(AH, ee);
+add(ee, AL);
+
+stdout.put("total is $");
+stdout.puti8(AL);
+
+end DVM;
