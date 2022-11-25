@@ -1,0 +1,30 @@
+//find area of ellipse
+
+program areaEllipse;
+#include("stdlib.hhf");
+
+static
+pi: real32:= 3.141592;
+b: real32;
+a: real32;
+area: real32;
+
+begin areaEllipse;
+
+stdout.put("Enter a: ");
+stdin.get(a);
+stdout.put("Enter b: ");
+stdin.get(b);
+
+finit();
+fld(a);
+fld(b);
+fmul();
+fld(pi);
+fmul();
+fstp(area);
+
+stdout.put("The area of the ellipse is ");
+stdout.putr32(area, 8, 4);
+
+end areaEllipse;
