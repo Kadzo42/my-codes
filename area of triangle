@@ -1,0 +1,30 @@
+//find area of triangle
+
+program areaTriangle;
+#include("stdlib.hhf");
+
+static
+b: real32;
+h: real32;
+a: real32;
+c: real32:= 0.5;
+
+begin areaTriangle;
+
+stdout.put("Enter base: ");
+stdin.get(b);
+stdout.put("Enter height: ");
+stdin.get(h);
+
+finit();
+fld(b);
+fld(h);
+fmul();
+fld(c);
+fmul();
+fstp(a);
+
+stdout.put("The area of the triangle is ");
+stdout.putr32(a, 8, 4);
+
+end areaTriangle;
