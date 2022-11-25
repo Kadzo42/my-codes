@@ -1,0 +1,60 @@
+//Convert Decimal to Binary
+
+program decimal2Binary;
+#include ("stdlib.hhf");
+
+static
+x: int8;
+
+begin decimal2Binary;
+
+stdout.put("Please enter a number: ");
+stdin.get(x);
+stdout.put(nl, "%");
+
+mov(0, AL);
+mov(x, AL);
+
+shl(1, AL);
+lahf();
+and(%0000_0001, AH);
+stdout.puti8(AH);
+
+shl(1, AL);
+lahf();
+and(%0000_0001, AH);
+stdout.puti8(AH);
+
+shl(1, AL);
+lahf();
+and(%0000_0001, AH);
+stdout.puti8(AH);
+
+shl(1, AL);
+lahf();
+and(%0000_0001, AH);
+stdout.puti8(AH);
+
+shl(1, AL);
+lahf();
+and(%0000_0001, AH);
+stdout.puti8(AH);
+
+shl(1, AL);
+lahf();
+and(%0000_0001, AH);
+stdout.puti8(AH);
+
+shl(1, AL);
+lahf();
+and(%0000_0001, AH);
+stdout.puti8(AH);
+
+shl(1, AL);
+lahf();
+and(%0000_0001, AH);
+stdout.puti8(AH);
+
+stdout.put(" is ", x, " in binary.");
+
+end decimal2Binary; 
